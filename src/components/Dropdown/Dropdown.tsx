@@ -4,19 +4,21 @@ import dropdownArrowSvg from "../../assets/images/svg/dropdown-arrow.svg";
 import Icon from "../Icon/Icon";
 import Button from "../Button/Button";
 import "../../assets/styles/dropdown/dropdown.scss";
+import successSvg from "../../assets/images/svg/success.svg";
 
 interface DropdownProps {
     title?: string;
     width?: number;
+    height?: number;
     data?: ICompany[];
 }
 
 const Dropdown: FC<DropdownProps> = (props) => {
     const {
-        title, data, width
+        title, data, width, height
     } = props;
 
-    const [isListOpen, setIsListOpen] = useState<boolean>(true);
+    const [isListOpen, setIsListOpen] = useState<boolean>(false);
 
 
     return (
@@ -41,15 +43,48 @@ const Dropdown: FC<DropdownProps> = (props) => {
             </Button>
             {
                 isListOpen && (
-                    <div className={"dropdown__list"} style={{width: width}}>
+                    <div
+                        className={"dropdown__list"}
+                        style={{
+                            width: width,
+                            height: height
+                        }}
+                    >
                         <div className={"dropdown__item"}>
-                            <Button className={"dropdown__btn"}>
+                            <Button
+                                className={"dropdown__btn"}
+                                onClick={() => setIsListOpen(!isListOpen)}
+                            >
                                 Все компании
+                                <Icon
+                                    src={successSvg}
+                                    alt={"success"}
+                                />
                             </Button>
                         </div>
                         <div className={"dropdown__item"}>
                             <Button className={"dropdown__btn"}>
                                 Строительная компания
+                            </Button>
+                        </div>
+                        <div className={"dropdown__item"}>
+                            <Button className={"dropdown__btn"}>
+                                Грузоперевозка
+                            </Button>
+                        </div>
+                        <div className={"dropdown__item"}>
+                            <Button className={"dropdown__btn"}>
+                                Грузоперевозка
+                            </Button>
+                        </div>
+                        <div className={"dropdown__item"}>
+                            <Button className={"dropdown__btn"}>
+                                Грузоперевозка
+                            </Button>
+                        </div>
+                        <div className={"dropdown__item"}>
+                            <Button className={"dropdown__btn"}>
+                                Грузоперевозка
                             </Button>
                         </div>
                         <div className={"dropdown__item"}>

@@ -1,4 +1,4 @@
-import {FC, ReactNode} from "react";
+import {FC, MouseEventHandler, ReactNode} from "react";
 import "../../assets/styles/button/button.scss";
 
 interface ButtonProps {
@@ -9,8 +9,8 @@ interface ButtonProps {
     autoFocus?: boolean;
     width?: number;
     height?: number;
-    icon?: ReactNode
-    onClick?: () => void
+    icon?: ReactNode;
+    onClick?: () => void;
 };
 
 const Button: FC<ButtonProps> = (props) => {

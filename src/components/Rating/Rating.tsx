@@ -1,34 +1,45 @@
 import {FC, useState} from "react";
-import starSvg from "../../assets/images/svg/star.svg";
-import Icon from "../Icon/Icon";
 import "../../assets/styles/rating/rating.scss";
+import Star from "../Icon/Star/Star";
+import Input from "../Input/Input";
 
 interface RatingProps {
+    rate?: number;
+    count?: number;
     size?: number;
 };
 
 const Rating: FC<RatingProps> = (props) => {
     const {
-        size
+        size, count, rate
     } = props;
 
-    const stars = Array(5).fill(0);
-    const [currentValue, setCurrentValue] = useState<number>(0);
-    const [hoverValue, setHoverValue] = useState<any>(null);
-
+    const [rating, setRating] = useState<number>(rate ?? 0);
 
     return (
         <div className={"rating"}>
             {
-                stars.map((_, index) =>
-                    <Icon
-                        width={size}
-                        height={size}
-                        key={index}
-                        src={starSvg}
-                        alt={"rating"}
-                    />
-                )
+                [...Array(count ?? 5)].map((star, index) => {
+                    const ratingValue = index + 1;
+                    return (
+                        <label
+                            key={index}
+                            className={"rating__label"}
+                        >
+                            <Input
+                                type={"radio"}
+                                name={"rating"}
+                                value={ratingValue}
+                                onClick={() => setRating(ratingValue)}
+                            />
+                            <Star
+                                width={size}
+                                height={size}
+                                color={ratingValue <= rating ? "1" : "0.2"}
+                            />
+                        </label>
+                    );
+                })
             }
         </div>
     );

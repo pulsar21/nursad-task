@@ -5,12 +5,15 @@ interface RadioProps {
     name?: string;
     disabled?: boolean;
     checked?: boolean;
+    value?: string | number;
+    onClick?: () => void;
     title?: string | ReactNode;
 };
 
 const Radio: FC<RadioProps> = (props) => {
     const {
-        name, disabled, checked, title
+        name, disabled, checked, title,
+        value, onClick
     } = props;
 
     return (
@@ -21,6 +24,8 @@ const Radio: FC<RadioProps> = (props) => {
                 name={name}
                 disabled={disabled}
                 checked={checked}
+                value={value}
+                onClick={onClick}
             />
             <span className={"radio__box"}>
             </span>

@@ -20,8 +20,12 @@ import CardItem from "./components/Card/CardItem";
 import TextArea from "./components/TextArea/TextArea";
 import Radio from "./components/Radio/Radio";
 import Divider from "./components/Divider/Divider";
+import Modal from "./components/Modal/Modal";
+import {useState} from "react";
 
 const App = () => {
+    const [modalActive, setModalActive] = useState<boolean>(false);
+    console.log(modalActive)
     const companies: ICompany[] = [
         {
             id: 1,
@@ -101,10 +105,13 @@ const App = () => {
             <Search
                 placeholder={"Add .."}
                 width={200}
+                height={30}
+                data={companies}
             />
             <Dropdown
                 title={"Все компании"}
                 width={217}
+                height={172}
             />
             <ButtonGroup
 
@@ -129,7 +136,7 @@ const App = () => {
                 </Button>
             </ButtonGroup>
             <Avatar src={avatarPng} alt={"avatar"} size={32}/>
-            <Rating size={30}/>
+            <Rating size={24} count={5} rate={2}/>
             {/*<Card*/}
             {/*    width={656}*/}
             {/*>*/}
@@ -189,6 +196,13 @@ const App = () => {
                 />
             </div>
             <Divider />
+            <Button
+                className={"btn-primary"}
+                onClick={() => setModalActive(true)}
+            >
+                Modal Open
+            </Button>
+            <Modal active={modalActive} setActive={setModalActive}/>
         </div>
     );
 };

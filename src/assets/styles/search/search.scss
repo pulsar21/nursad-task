@@ -1,6 +1,7 @@
 @use "../variables";
 
 .search {
+  position: relative;
   input {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -22,5 +23,26 @@
     border-bottom-right-radius: 4px;
     background-color: variables.$patternBlue;
     cursor: pointer;
+  }
+
+  &__list {
+    position: absolute;
+    background-color: variables.$white;
+    z-index: 100;
+    margin-top: 1px;
+    border: 1px solid variables.$lightBlue;
+  }
+
+  &__item {
+    padding: 5px 6px;
+    margin-top: 5px;
+    border-bottom: 1px solid variables.$lightBlue;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
   }
 }

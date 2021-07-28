@@ -2,4 +2,7 @@
 
 .rating {
   cursor: pointer;
+  &__label > input[type="radio"] {
+      display: none;
+  }
 }

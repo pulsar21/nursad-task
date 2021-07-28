@@ -6,9 +6,10 @@ interface IconProps {
     style?: {};
     src: string | undefined;
     alt: string | undefined;
+    color?: string;
     width?: number;
     height?: number;
-    onClick?: () => MouseEventHandler<HTMLImageElement>;
+    onClick?: () => void;
 };
 
 const Icon: FC<IconProps> = (props) => {
