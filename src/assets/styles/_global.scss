@@ -1,0 +1,17 @@
+@use "variables";
+@use "fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  box-sizing: border-box;
+  color: variables.$rhino;
+  background-color: variables.$zircon;
+}

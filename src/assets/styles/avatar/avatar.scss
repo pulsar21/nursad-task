@@ -1,0 +1,9 @@
+@use "../variables";
+
+.avatar {
+  background-color: variables.$patternBlue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}

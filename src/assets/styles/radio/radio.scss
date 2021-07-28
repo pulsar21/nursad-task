@@ -1,0 +1,47 @@
+@use "../variables";
+
+.radio {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  margin-top: 40px;
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  &__box {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: variables.$lightBlue;
+    border-radius: 50%;
+    margin-left: -32px;
+  }
+
+  &__title {
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  &__input:checked + &__box::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: variables.$blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__input:disabled + &__box::before {
+    background-color: variables.$linkWater;
+  }
+  &__input:checked:disabled + &__box::before {
+    background-color: variables.$linkWater;
+  }
+}

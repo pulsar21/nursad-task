@@ -1,0 +1,31 @@
+@use "../variables";
+
+.card {
+  &__item {
+    padding: 24px 16px;
+    border: 1px solid variables.$lightBlue;
+    border-radius: 4px;
+    width: 100%;
+    height: auto;
+    background-color: variables.$white;
+  }
+  &__title {
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  &__body {
+    & > .content {
+      .content__item {
+        display: flex;
+        align-items: center;
+        margin-top: 16px;
+      }
+      .content__text {
+        margin-left: 10px;
+        font-size: 17px;
+        line-height: 20px;
+      }
+    }
+  }
+}

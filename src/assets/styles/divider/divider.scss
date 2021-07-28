@@ -1,0 +1,5 @@
+@use "../variables";
+
+.divider {
+  border-top: 1px solid variables.$patternBlue;
+}
