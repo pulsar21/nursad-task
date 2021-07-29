@@ -1,0 +1,35 @@
+@use "../variables";
+
+.navbar {
+  grid-area: nav;
+  height: 56px;
+  background-color: variables.$black;
+  padding: 5px 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    & > h2 {
+      margin-left: 13px;
+      font-size: 17px;
+      line-height: 20px;
+      color: variables.$white;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    & > .btn {
+      margin-right: 12px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

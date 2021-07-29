@@ -1,0 +1,32 @@
+@use "../variables";
+
+.sidebar {
+  grid-area: sidebar;
+  height: 100%;
+  background-color: variables.$black;
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 26px 5px 16px;
+    height: 56px;
+    background-color: variables.$payneGray;
+    & > h2 {
+      font-size: 17px;
+      line-height: 20px;
+      color: variables.$white;
+      margin-left: 12px;
+    }
+  }
+
+  &__menu {
+    padding: 16px;
+  }
+}
+
+@media only screen and (max-width: 978px) {
+  .sidebar {
+    display: none;
+  }
+}
