@@ -55,7 +55,9 @@ const Dropdown: FC<DropdownProps> = (props) => {
                                 className={"dropdown__btn"}
                                 onClick={() => setIsListOpen(!isListOpen)}
                             >
-                                Все компании
+                                {
+                                    title
+                                }
                                 <Icon
                                     src={successSvg}
                                     alt={"success"}

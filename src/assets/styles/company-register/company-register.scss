@@ -1,0 +1,42 @@
+@use "../variables";
+
+.company-register {
+  padding: 25px;
+
+  &__title {
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 150%;
+  }
+  &__description {
+    font-size: 17px;
+    line-height: 150%;
+    margin-top: 20px;
+  }
+
+  &__filters {
+    margin-top: 34px;
+    margin-bottom: 23px;
+    display: grid;
+    grid-template-columns: 218px 217px 209px 218px 218px;
+    gap: 12px;
+    & > div > .title {
+      font-weight: 500;
+      color: variables.$raven;
+      margin-bottom: 8px;
+    }
+    & > .search {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  &__result {
+    & > h3 {
+      font-size: 17px;
+      line-height: 150%;
+      margin-top: 23px;
+      color: variables.$pantone;
+    }
+  }
+}

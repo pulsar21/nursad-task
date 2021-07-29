@@ -1,7 +1,7 @@
-const MAIN_ROUTE: string = "/";
+const COMPANY_REGISTER_ROUTE: string = "/";
 const BASKET_ROUTE: string = "/basket";
 
 export {
-    MAIN_ROUTE,
+    COMPANY_REGISTER_ROUTE,
     BASKET_ROUTE
 }

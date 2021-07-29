@@ -1,4 +1,4 @@
-import {BASKET_ROUTE, MAIN_ROUTE} from "../utils/consts";
+import {BASKET_ROUTE, COMPANY_REGISTER_ROUTE} from "../utils/consts";
 import CompanyRegister from "../pages/CompanyRegister/CompanyRegister";
 import {FC} from "react";
 import Basket from "../pages/Basket/Basket";
@@ -10,7 +10,7 @@ interface IRoutes {
 
 const publicRoutes: IRoutes[] = [
     {
-        path: MAIN_ROUTE,
+        path: COMPANY_REGISTER_ROUTE,
         Component: CompanyRegister
     },
     {
