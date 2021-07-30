@@ -4,6 +4,7 @@ import Icon from "../Icon/Icon";
 import closeSvg from "../../assets/images/svg/close.svg";
 
 interface ModalProps {
+    className?: string;
     width?: number;
     active: boolean;
     setActive: (active: boolean) => void;
@@ -11,7 +12,7 @@ interface ModalProps {
 
 const Modal: FC<ModalProps> = (props) => {
     const {
-        children, active, setActive, width
+        children, active, setActive, width,
     } = props;
     return (
         <div

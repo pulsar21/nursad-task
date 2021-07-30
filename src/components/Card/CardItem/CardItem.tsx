@@ -1,25 +1,35 @@
 import {FC, ReactNode} from "react";
 
 interface CardItemProps {
-    title?: string;
+    className?: string;
+    title?: string | ReactNode;
     body?: string | ReactNode;
     footer?: string | ReactNode;
+    onClick?: () => void;
 }
 
 const CardItem: FC<CardItemProps> = (props) => {
     const {
-        title, body, footer
+        title, body, footer, onClick,
+        className
     } = props;
 
 
     return (
-        <div className={"card__item"}>
+        <div
+            className={className ? `card__item ${className}` : `card__item`}
+            onClick={onClick}
+        >
             <div className={"card__header"}>
-                <h2 className={"card__title"}>
-                    {
+                {
+                    typeof title === "string" ?
+                        <h2 className={"card__title"}>
+                            {
+                                title
+                            }
+                        </h2> :
                         title
-                    }
-                </h2>
+                }
             </div>
             <div className={"card__body"}>
                 {

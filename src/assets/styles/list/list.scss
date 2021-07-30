@@ -3,17 +3,6 @@
 .list {
   &__item {
     display: flex;
-    padding: 15px 11px;
-    cursor: pointer;
-    & > h2 {
-      margin-left: 19px;
-      font-size: 17px;
-      line-height: 20px;
-      color: variables.$darkGrayBlue;
-    }
-    &:hover {
-      background-color: variables.$payneGray;
-      border-radius: 8px;
-    }
+    align-items: center;
   }
 }

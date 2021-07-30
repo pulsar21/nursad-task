@@ -1,8 +1,6 @@
 @use "../variables";
 
 .company-register {
-  padding: 25px;
-
   &__title {
     font-weight: 900;
     font-size: 42px;
@@ -15,8 +13,9 @@
   }
 
   &__filters {
-    margin-top: 34px;
-    margin-bottom: 23px;
+    padding: 24px 0;
+    margin-top: 8px;
+    margin-bottom: 24px;
     display: grid;
     grid-template-columns: 218px 217px 209px 218px 218px;
     gap: 12px;
@@ -37,6 +36,27 @@
       line-height: 150%;
       margin-top: 23px;
       color: variables.$pantone;
+    }
+    & > .card {
+      .card__item {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1520px) {
+  .company-register {
+    &__filters {
+      grid-template-columns: 218px 218px 218px 218px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1220px) {
+  .company-register {
+    &__filters {
+      grid-template-columns: 218px 218px 218px;
     }
   }
 }

@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, useState} from "react";
 import "../../assets/styles/company-register/company-register.scss";
 import Divider from "../../components/Divider/Divider";
 import Dropdown from "../../components/Dropdown/Dropdown";
@@ -20,6 +20,7 @@ interface CompanyRegister {
 }
 
 const CompanyRegister: FC<CompanyRegister> = () => {
+
     const companies: ICompany[] = [
         {
             id: 1,
@@ -44,7 +45,7 @@ const CompanyRegister: FC<CompanyRegister> = () => {
             city: "Нур-Султан",
             description: "Инженерные работы, в том числе электромонтажные и вентиляционные",
             location: "Астана, ул. Бухар Жырау 30 н.п.6"
-        }
+        },
     ];
     return (
         <section className={"company-register"}>
@@ -60,6 +61,7 @@ const CompanyRegister: FC<CompanyRegister> = () => {
                     <h3 className={"title"}>Регион</h3>
                     <Dropdown
                         width={218}
+                        height={263}
                         title={"Весь Казахстан"}
                         data={companies}
                     />
@@ -68,6 +70,7 @@ const CompanyRegister: FC<CompanyRegister> = () => {
                     <h3 className={"title"}>Сфера деятельности</h3>
                     <Dropdown
                         width={218}
+                        height={198}
                         title={"Все категории"}
                         data={companies}
                     />

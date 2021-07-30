@@ -66,9 +66,10 @@ const Sidebar: FC<SidebarProps> = () => {
             </div>
             <div className={"sidebar__menu"}>
                 <List
+                    className={"menu__list"}
                     items={sidebarData}
                     renderItem={(item: ISidebarData) =>
-                        <ListItem key={item.id}>
+                        <ListItem key={item.id} className={"menu__item"}>
                             {
                                 item.icon
                             }

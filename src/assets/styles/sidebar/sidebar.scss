@@ -22,6 +22,41 @@
 
   &__menu {
     padding: 16px;
+    .menu {
+      &__item {
+        padding: 15px 11px;
+        cursor: pointer;
+        & > h2 {
+          margin-left: 19px;
+          font-size: 17px;
+          line-height: 20px;
+          color: variables.$darkGrayBlue;
+        }
+        &:hover {
+          background-color: variables.$payneGray;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1220px) {
+  .sidebar {
+    &__title {
+      & > h2 {
+        font-size: 15px;
+      }
+    }
+    &__menu {
+      .list {
+        &__item {
+          & > h2 {
+            font-size: 15px;
+          }
+        }
+      }
+    }
   }
 }
 

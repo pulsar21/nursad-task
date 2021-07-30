@@ -1,6 +1,247 @@
 @use "../variables";
 
 .main {
+  position: relative;
   grid-area: main;
   overflow-y: auto;
+  &__block {
+    padding: 25px;
+  }
+}
+
+.company-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: .5s;
+
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__content {
+    width: 498px;
+    height: 100%;
+    background-color: white;
+    overflow-y: auto;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+
+    & > h3 {
+      font-weight: 900;
+      font-size: 17px;
+      line-height: 20px;
+      margin-left: 10px;
+    }
+  }
+
+  &__data {
+    display: flex;
+    align-items: center;
+    border-left: 2px solid variables.$blue;
+    padding: 16px 22px;
+
+    & > div {
+      margin-left: 12px;
+
+      & > h4 {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 20px;
+      }
+
+      & > p {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__location {
+    background-color: variables.$aliceBlue;
+    padding: 16px 24px;
+
+    .location-map {
+      &__title {
+        font-weight: 900;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      &__name {
+        margin-top: 16px;
+      }
+
+      .map {
+        margin-top: 16px;
+      }
+    }
+
+    .location-info {
+      margin-top: 16px;
+
+      &__title {
+        font-weight: 900;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      &__list {
+        margin-top: 16px;
+      }
+
+      &__item {
+        padding: 16px 0;
+
+        & > h2 {
+          margin-left: 12px;
+        }
+      }
+    }
+
+    .location-feedback {
+      margin-top: 16px;
+
+      &__title {
+        font-weight: 900;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      &__card {
+        margin-top: 16px;
+      }
+
+      &__item {
+        background-color: variables.$white;
+
+        .card__header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          & > .user {
+            display: flex;
+            align-items: center;
+
+            & > div {
+              margin-left: 8px;
+            }
+          }
+        }
+
+        .card__body {
+          margin-top: 12px;
+        }
+      }
+    }
+
+    .location-btn {
+      margin-top: 138px;
+
+      & > .btn-group > .btn {
+        font-weight: 900;
+        font-size: 12px;
+        text-transform: uppercase;
+        border-radius: 4px;
+        margin-right: 4px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.tender-modal {
+  &__header {
+    margin-bottom: 15px;
+  }
+  &__title {
+    font-weight: 900;
+    font-size: 17px;
+    line-height: 20px;
+  }
+  &__radio {
+    padding: 12px 0;
+    margin-left: 36px;
+    margin-top: 20px;
+  }
+  &__btn {
+    margin-top: 16px;
+    & > .btn {
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-right: 8px;
+      border-radius: 4px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.feedback-modal {
+  &__header {
+    margin-bottom: 15px;
+  }
+  &__title {
+    font-weight: 900;
+    font-size: 17px;
+    line-height: 20px;
+  }
+  &__desc {
+    margin-top: 16px;
+    font-weight: 900;
+    font-size: 17px;
+    line-height: 20px;
+  }
+  &__text {
+    & > h4 {
+      font-weight: 900;
+      font-size: 17px;
+      line-height: 20px;
+    }
+    .textarea {
+      margin-top: 12px;
+    }
+  }
+  &__rating {
+    margin-top: 12px;
+    & > h4 {
+      font-weight: 900;
+      font-size: 17px;
+      line-height: 20px;
+    }
+    & > .rating {
+      margin-top: 12px;
+    }
+  }
+  &__btn {
+    margin-top: 24px;
+    justify-content: flex-end;
+    & > .btn {
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-right: 8px;
+      border-radius: 4px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }

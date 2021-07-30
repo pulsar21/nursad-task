@@ -2,6 +2,7 @@ import {FC, ReactNode} from "react";
 import "../../assets/styles/radio/radio.scss";
 
 interface RadioProps {
+    className?: string;
     name?: string;
     disabled?: boolean;
     checked?: boolean;
@@ -13,11 +14,11 @@ interface RadioProps {
 const Radio: FC<RadioProps> = (props) => {
     const {
         name, disabled, checked, title,
-        value, onClick
+        value, onClick, className
     } = props;
 
     return (
-        <label className={"radio"}>
+        <label className={className ? `radio ${className}` : `radio`}>
             <input
                 type={"radio"}
                 className={"radio__input"}

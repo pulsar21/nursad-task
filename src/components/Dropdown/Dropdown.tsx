@@ -52,7 +52,7 @@ const Dropdown: FC<DropdownProps> = (props) => {
                     >
                         <div className={"dropdown__item"}>
                             <Button
-                                className={"dropdown__btn"}
+                                className={"dropdown__btn active"}
                                 onClick={() => setIsListOpen(!isListOpen)}
                             >
                                 {
@@ -67,6 +67,16 @@ const Dropdown: FC<DropdownProps> = (props) => {
                         <div className={"dropdown__item"}>
                             <Button className={"dropdown__btn"}>
                                 Строительная компания
+                            </Button>
+                        </div>
+                        <div className={"dropdown__item"}>
+                            <Button className={"dropdown__btn"}>
+                                Грузоперевозка
+                            </Button>
+                        </div>
+                        <div className={"dropdown__item"}>
+                            <Button className={"dropdown__btn"}>
+                                Грузоперевозка
                             </Button>
                         </div>
                         <div className={"dropdown__item"}>
