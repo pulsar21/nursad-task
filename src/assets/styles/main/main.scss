@@ -28,6 +28,42 @@
     pointer-events: all;
   }
 
+  &__products {
+    padding: 16px 24px;
+    .products__item {
+      .card__body {
+        display: flex;
+      }
+    }
+    .products__thumb {
+      .btn-primary {
+        margin-top: 8px;
+        text-transform: initial;
+      }
+    }
+    .products__content {
+      margin-left: 16px;
+      .name {
+        font-weight: 900;
+      }
+      .group {
+        color: variables.$raven;
+        margin-top: 11px;
+      }
+      .code {
+        color: variables.$raven;
+        margin-top: 11px;
+      }
+      .volume {
+        color: variables.$raven;
+        margin-top: 11px;
+      }
+      .price {
+        font-weight: 700;
+        margin-top: 11px;
+      }
+    }
+  }
   &__content {
     width: 498px;
     height: 100%;
@@ -46,6 +82,10 @@
       line-height: 20px;
       margin-left: 10px;
     }
+  }
+
+  &__tabs {
+    padding: 0 24px;
   }
 
   &__data {
@@ -113,7 +153,7 @@
 
     .location-feedback {
       margin-top: 16px;
-
+      margin-bottom: 138px;
       &__title {
         font-weight: 900;
         font-size: 12px;
@@ -147,19 +187,18 @@
         }
       }
     }
-
-    .location-btn {
-      margin-top: 138px;
-
-      & > .btn-group > .btn {
-        font-weight: 900;
-        font-size: 12px;
-        text-transform: uppercase;
-        border-radius: 4px;
-        margin-right: 4px;
-        &:last-child {
-          margin-right: 0;
-        }
+  }
+  &__btn {
+    padding: 0 24px;
+    margin-bottom: 24px;
+    & > .btn-group > .btn {
+      font-weight: 900;
+      font-size: 12px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      margin-right: 4px;
+      &:last-child {
+        margin-right: 0;
       }
     }
   }

@@ -6,6 +6,7 @@
     font-size: 42px;
     line-height: 150%;
   }
+
   &__description {
     font-size: 17px;
     line-height: 150%;
@@ -19,11 +20,13 @@
     display: grid;
     grid-template-columns: 218px 217px 209px 218px 218px;
     gap: 12px;
+
     & > div > .title {
       font-weight: 500;
       color: variables.$raven;
       margin-bottom: 8px;
     }
+
     & > .search {
       display: flex;
       align-items: flex-end;
@@ -37,6 +40,7 @@
       margin-top: 23px;
       color: variables.$pantone;
     }
+
     & > .card {
       .card__item {
         cursor: pointer;

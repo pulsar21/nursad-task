@@ -21,6 +21,11 @@ a {
   color: variables.$rhino;
 }
 
+ul, li {
+  list-style-type: none;
+  display: block;
+}
+
 //scrollbar
 ::-webkit-scrollbar {
   width: 4px;

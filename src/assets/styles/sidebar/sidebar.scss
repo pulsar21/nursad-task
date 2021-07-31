@@ -12,6 +12,7 @@
     padding: 5px 26px 5px 16px;
     height: 56px;
     background-color: variables.$payneGray;
+
     & > h2 {
       font-size: 17px;
       line-height: 20px;
@@ -22,19 +23,56 @@
 
   &__menu {
     padding: 16px;
+
     .menu {
       &__item {
-        padding: 15px 11px;
         cursor: pointer;
-        & > h2 {
-          margin-left: 19px;
-          font-size: 17px;
-          line-height: 20px;
-          color: variables.$darkGrayBlue;
-        }
-        &:hover {
-          background-color: variables.$payneGray;
-          border-radius: 8px;
+
+        & > div {
+          width: 100%;
+          & > .item-parent {
+            padding: 15px 11px;
+            display: flex;
+            align-items: center;
+
+            & > h2 {
+              margin-left: 19px;
+              font-size: 17px;
+              line-height: 20px;
+              color: variables.$darkGrayBlue;
+            }
+
+            &:hover {
+              background-color: variables.$payneGray;
+              border-radius: 8px;
+              & + .item-child {
+                div > h2 {
+                  color: variables.$white;
+                }
+              }
+              & > h2 {
+                color: variables.$white;
+              }
+              svg {
+                & > path {
+                  fill: variables.$white;
+                }
+              }
+            }
+          }
+          & > .item-child {
+            & > div {
+              padding: 15px 11px;
+              display: flex;
+              align-items: center;
+              & > h2 {
+                margin-left: 37px;
+                font-size: 17px;
+                line-height: 20px;
+                color: variables.$darkGrayBlue;
+              }
+            }
+          }
         }
       }
     }
@@ -48,6 +86,7 @@
         font-size: 15px;
       }
     }
+
     &__menu {
       .list {
         &__item {
