@@ -11,6 +11,10 @@ import CompanyAbout from "./CompanyAbout";
 import CompanyProducts from "./CompanyProducts";
 import TenderModal from "./TenderModal";
 import FeedbackModal from "./FeedbackModal";
+import {useTypeAction} from "../../../hooks/useTypedAction";
+import {useTypedSelector} from "../../../hooks/useTypedSelector";
+import Icon from "../../Icon/Icon";
+import closeSvg from "../../../assets/images/svg/close.svg";
 
 interface CompanySidebarProps {
     companyInfoOpen: boolean;
@@ -25,12 +29,30 @@ const CompanySidebar: FC<CompanySidebarProps> = (props) => {
     const [feedbackModalOpen, setFeedbackModalOpen] = useState<boolean>(false);
     const [selectedTab, setSelectedTab] = useState<string>("о компании");
 
+    const { setVisibleCompanyInfo } = useTypeAction();
+
+    const { companies } = useTypedSelector(state => state.company);
+
     return <>
-        <div className={companyInfoOpen ? "company-info open" : "company-info"}>
-            <div className={"company-info__content"}>
+        <div
+            className={companyInfoOpen ? "company-info open" : "company-info"}
+            onClick={() => setVisibleCompanyInfo(false)}
+        >
+            <div
+                className={companyInfoOpen ? "company-info__content open" : "company-info__content"}
+                onClick={(e) => e.stopPropagation()}
+            >
                 <div className={"company-info__title"}>
                     <IconIndustry width={20} height={16} color={"#434A54"}/>
                     <h3>Актобе Монтаж Автоматика</h3>
+                    <Icon
+                        src={closeSvg}
+                        alt={"close"}
+                        width={20}
+                        height={16}
+                        className={"icon-close"}
+                        onClick={() => setVisibleCompanyInfo(false)}
+                    />
                 </div>
                 <Divider color={"#B9BDC3"}/>
                 <Tabs
@@ -45,7 +67,7 @@ const CompanySidebar: FC<CompanySidebarProps> = (props) => {
                     isSelected={selectedTab === "о компании"}
                 >
                     <TabContent className={"company-info__about"}>
-                        <CompanyAbout />
+                        <CompanyAbout/>
                     </TabContent>
                 </TabPane>
                 <TabPane
@@ -53,26 +75,23 @@ const CompanySidebar: FC<CompanySidebarProps> = (props) => {
                     isSelected={selectedTab === "Товары"}
                 >
                     <TabContent className={"company-info__products"}>
-                        <CompanyProducts />
+                        <CompanyProducts/>
                     </TabContent>
                 </TabPane>
                 <div className={"company-info__btn"}>
                     <ButtonGroup>
                         <Button
-                            width={160}
                             className={"btn-primary"}
                             onClick={() => setTenderModalOpen(true)}
                         >
                             пригласить в тендер
                         </Button>
                         <Button
-                            width={147}
                             className={"btn-ghost"}
                         >
                             в мои поставщики
                         </Button>
                         <Button
-                            width={128}
                             className={"btn-ghost"}
                             onClick={() => setFeedbackModalOpen(true)}
                         >
@@ -85,16 +104,16 @@ const CompanySidebar: FC<CompanySidebarProps> = (props) => {
         <Modal
             active={tenderModalOpen}
             setActive={setTenderModalOpen}
-            width={368}
+            className={"modal-tender"}
         >
-            <TenderModal setTenderModalOpen={setTenderModalOpen} />
+            <TenderModal setTenderModalOpen={setTenderModalOpen}/>
         </Modal>
         <Modal
             active={feedbackModalOpen}
             setActive={setFeedbackModalOpen}
-            width={464}
+            className={"modal-feedback"}
         >
-            <FeedbackModal setFeedbackModalOpen={setFeedbackModalOpen} />
+            <FeedbackModal setFeedbackModalOpen={setFeedbackModalOpen}/>
         </Modal>
     </>
 };

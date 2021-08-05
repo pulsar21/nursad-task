@@ -87,13 +87,12 @@ const CompanyProducts: FC<CompanyProductsProps> = () => {
         </div>
         <Card
             className={"products__card"}
-            width={449}
         >
             {
                 productCardData.map((product) =>
                     <CardItem
                         className={"products__item"}
-                        key={product.id}
+                        key={`${Math.random()}${product.id}}`}
                         body={
                             <>
                                 <div className={"products__thumb"}>

@@ -35,7 +35,7 @@
             display: flex;
             align-items: center;
 
-            & > h2 {
+            & > a {
               margin-left: 19px;
               font-size: 17px;
               line-height: 20px;
@@ -46,11 +46,11 @@
               background-color: variables.$payneGray;
               border-radius: 8px;
               & + .item-child {
-                div > h2 {
+                div > a {
                   color: variables.$white;
                 }
               }
-              & > h2 {
+              & > a {
                 color: variables.$white;
               }
               svg {
@@ -65,7 +65,7 @@
               padding: 15px 11px;
               display: flex;
               align-items: center;
-              & > h2 {
+              & > a {
                 margin-left: 37px;
                 font-size: 17px;
                 line-height: 20px;
@@ -81,26 +81,30 @@
 
 @media only screen and (max-width: 1220px) {
   .sidebar {
-    &__title {
-      & > h2 {
-        font-size: 15px;
-      }
+    .sidebar__menu .menu__item > div > .item-parent {
+      padding: 15px 5px;
     }
-
-    &__menu {
-      .list {
-        &__item {
-          & > h2 {
-            font-size: 15px;
-          }
-        }
-      }
+    .sidebar__menu .menu__item > div > .item-child > div {
+      padding: 15px 5px;
+    }
+    .sidebar__menu .menu__item > div > .item-child > div > h2 {
+      font-size: 14px;
+      margin-left: 28px;
+    }
+    .sidebar__menu .menu__item > div > .item-parent > h2 {
+      font-size: 14px;
+      margin-left: 10px;
     }
   }
 }
 
-@media only screen and (max-width: 978px) {
+@media only screen and (max-width: 1023px) {
   .sidebar {
-    display: none;
+      position: absolute;
+      transform: translateX(-100%);
+      transition: .5s;
+    &-open {
+      transform: translateX(0);
+    }
   }
 }

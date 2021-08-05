@@ -6,17 +6,30 @@ import citySvg from "../../assets/images/svg/city.svg";
 import descriptionSvg from "../../assets/images/svg/description.svg";
 import locationSvg from "../../assets/images/svg/location.svg";
 import Empty from "../Empty/Empty";
-import {FC} from "react";
+import {FC, memo, MouseEvent, useEffect} from "react";
 import {ICompany} from "../../types/types";
+import {useTypeAction} from "../../hooks/useTypedAction";
+import {fetchOneCompany} from "../../redux/actions/companyAction";
 
 interface CompanyResultProps {
     companies: ICompany[];
 }
 
-const CompanyResult: FC<CompanyResultProps> = (props) => {
+const CompanyResult: FC<CompanyResultProps> = memo((props) => {
     const {
         companies
     } = props;
+
+    const { setVisibleCompanyInfo, fetchOneCompany, fetchCompanies } = useTypeAction();
+
+    const companyInfoOpenHandler = (e: MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        setVisibleCompanyInfo(true);
+    }
+
+    useEffect(() => {
+        fetchCompanies();
+    }, [])
 
     return (
         <div className={"company-register__result"}>
@@ -26,13 +39,13 @@ const CompanyResult: FC<CompanyResultProps> = (props) => {
             {
                 companies.length > 0 ?
                     <Card
-                        width={656}
                     >
                         {
                             companies.map((company) =>
                                 <CardItem
                                     key={company.id}
                                     title={company.name}
+                                    onClick={companyInfoOpenHandler}
                                     body={
                                         <div className={"content"}>
                                             <div className={"content__item"}>
@@ -61,6 +74,6 @@ const CompanyResult: FC<CompanyResultProps> = (props) => {
             }
         </div>
     );
-};
+});
 
 export default CompanyResult;

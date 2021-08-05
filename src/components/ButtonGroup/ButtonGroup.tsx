@@ -16,15 +16,6 @@ const ButtonGroup: FC<ButtonGroupProps> = (props) => {
     return (
         <div
             className={className ? `btn-group ${className}` : `btn-group`}
-            style={
-                vertical ?
-                    {
-                        flexDirection: "column"
-                    } :
-                    {
-                        flexDirection: "row"
-                    }
-            }
             { ...attrs }
         >
             {

@@ -33,6 +33,11 @@
     }
   }
 
+  .divider {
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+
   &__result {
     & > h3 {
       font-size: 17px;
@@ -42,6 +47,7 @@
     }
 
     & > .card {
+      width: 656px;
       .card__item {
         cursor: pointer;
       }
@@ -61,6 +67,65 @@
   .company-register {
     &__filters {
       grid-template-columns: 218px 218px 218px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .company-register {
+    &__filters {
+      grid-template-columns: 218px 218px;
+    }
+    &__result {
+      .card {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 524px) {
+  .company-register {
+    .divider {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 474px) {
+  .company-register {
+    &__filters {
+      grid-template-columns: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  .company-register {
+    &__title{
+      font-size: 34px;
+    }
+    &__description {
+      font-size: 15px;
+    }
+    &__filters {
+      grid-template-columns: 100%;
+    }
+    &__result > .card > .card__item {
+      .card__header {
+        .card__title {
+          font-size: 16px;
+        }
+      }
+      .card__body {
+        .content {
+          .content__item > p {
+            font-size: 15px;
+          }
+        }
+      }
     }
   }
 }

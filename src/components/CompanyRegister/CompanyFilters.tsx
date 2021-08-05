@@ -19,7 +19,6 @@ const CompanyFilters: FC<CompanyFiltersProps> = (props) => {
             <div className={"region"}>
                 <h3 className={"title"}>Регион</h3>
                 <Dropdown
-                    width={218}
                     height={263}
                     title={"Весь Казахстан"}
                     data={companies}
@@ -28,7 +27,6 @@ const CompanyFilters: FC<CompanyFiltersProps> = (props) => {
             <div className={"activity"}>
                 <h3 className={"title"}>Сфера деятельности</h3>
                 <Dropdown
-                    width={218}
                     height={198}
                     title={"Все категории"}
                     data={companies}
@@ -61,7 +59,6 @@ const CompanyFilters: FC<CompanyFiltersProps> = (props) => {
                 <h3 className={"title"}>Сфера деятельности</h3>
                 <Search
                     placeholder={"Начните набирать..."}
-                    width={218}
                     height={30}
                     data={companies}
                 />
@@ -70,7 +67,6 @@ const CompanyFilters: FC<CompanyFiltersProps> = (props) => {
                 <h3 className={"title"}>Сфера деятельности</h3>
                 <Search
                     placeholder={"Начните набирать..."}
-                    width={218}
                     height={30}
                     data={companies}
                 />
@@ -80,13 +76,11 @@ const CompanyFilters: FC<CompanyFiltersProps> = (props) => {
                 <ButtonGroup
                 >
                     <Button
-                        width={109}
                     >
                         Нет
                     </Button>
                     <Button
                         className={"btn-primary"}
-                        width={109}
                     >
                         Да
                     </Button>
@@ -95,13 +89,12 @@ const CompanyFilters: FC<CompanyFiltersProps> = (props) => {
             <div className={"rating"}>
                 <h3 className={"title"}>Сфера деятельности</h3>
                 <Dropdown
-                    width={218}
                     title={"Все компании"}
                     data={companies}
                 />
             </div>
             <div className={"search"}>
-                <Button className={"btn-success"} width={209}>
+                <Button className={"btn-success"}>
                     Начать поиск
                 </Button>
             </div>

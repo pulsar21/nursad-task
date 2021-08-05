@@ -43,7 +43,7 @@ const TenderModal: FC<TenderModalProps> = (props) => {
             <div className={"tender-modal__header"}>
                 <h3 className={"tender-modal__title"}>Пригласить в тендер</h3>
             </div>
-            <Divider stretch={16}/>
+            <Divider />
             <List
                 className={"tender-modal__list"}
                 items={tenderData}

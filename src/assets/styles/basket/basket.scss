@@ -10,11 +10,12 @@
   &__card {
     margin-top: 28px;
     background-color: variables.$white;
+    overflow-x: scroll;
   }
 
   &__table {
     padding: 16px;
-    width: 100%;
+    min-width: 721px;
 
     .head {
       text-transform: uppercase;

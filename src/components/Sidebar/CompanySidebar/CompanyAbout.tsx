@@ -124,7 +124,6 @@ const CompanyAbout: FC<CompanyAboutProps> = (props) => {
                 </h4>
                 <Card
                     className={"location-feedback__card"}
-                    width={441}
                 >
                     {
                         feedbackMessageData.map((feedback) =>
@@ -153,6 +152,7 @@ const CompanyAbout: FC<CompanyAboutProps> = (props) => {
                                                 count={5}
                                                 rate={feedback.rating}
                                                 size={20}
+                                                disabled={true}
                                             />
                                         </div>
                                     </>

@@ -28,7 +28,6 @@ const FeedbackModal: FC<FeedbackModalProps> = (props) => {
                     name={"feedback-textarea"}
                     id={"feedback-textarea"}
                     placeholder={"Напишите комментарии..."}
-                    width={434}
                     height={120}
                 />
             </div>

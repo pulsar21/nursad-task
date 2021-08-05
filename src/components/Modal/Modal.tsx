@@ -13,10 +13,11 @@ interface ModalProps {
 const Modal: FC<ModalProps> = (props) => {
     const {
         children, active, setActive, width,
+        className
     } = props;
     return (
         <div
-            className={active ? `modal active` : `modal`}
+            className={active ? `modal active ${className ? `${className}` : ``}` : `modal ${className ? `${className}` : ``}`}
             onClick={() => setActive(!active)}
         >
             <div

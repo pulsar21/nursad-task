@@ -1,11 +1,12 @@
-import {FC, ReactNode} from "react";
+import {FC, ReactNode, MouseEvent} from "react";
+import {useTypedSelector} from "../../../hooks/useTypedSelector";
 
 interface CardItemProps {
     className?: string;
     title?: string | ReactNode;
     body?: string | ReactNode;
     footer?: string | ReactNode;
-    onClick?: () => void;
+    onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
 const CardItem: FC<CardItemProps> = (props) => {
@@ -13,7 +14,6 @@ const CardItem: FC<CardItemProps> = (props) => {
         title, body, footer, onClick,
         className
     } = props;
-
 
     return (
         <div

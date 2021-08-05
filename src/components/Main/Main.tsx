@@ -1,22 +1,22 @@
-import {FC, useState} from "react";
+import {FC} from "react";
 import "../../assets/styles/main/main.scss";
 import CompanySidebar from "../Sidebar/CompanySidebar/CompanySidebar";
+import {useTypedSelector} from "../../hooks/useTypedSelector";
 
 
 const Main: FC = ({children}) => {
-    const [companyInfoOpen, setCompanyInfoOpen] = useState<boolean>(false);
+    const { visibleCompanyInfo } = useTypedSelector(state => state.app);
 
-    const companyInfoOpenHandler = () => {
-        setCompanyInfoOpen(!companyInfoOpen);
-    }
     return (
-        <main className={"main"}>
+        <main
+            className={visibleCompanyInfo ? "main main-hidden" : "main"}
+        >
             <div className={"main__block"}>
                 {
                     children
                 }
             </div>
-            <CompanySidebar companyInfoOpen={companyInfoOpen} />
+            <CompanySidebar companyInfoOpen={visibleCompanyInfo} />
         </main>
     );
 };

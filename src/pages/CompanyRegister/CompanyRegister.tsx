@@ -4,6 +4,7 @@ import Divider from "../../components/Divider/Divider";
 import {ICompany} from "../../types/types";
 import CompanyFilters from "../../components/CompanyRegister/CompanyFilters";
 import CompanyResult from "../../components/CompanyRegister/CompanyResult";
+import {useTypedSelector} from "../../hooks/useTypedSelector";
 
 interface CompanyRegister {
 
@@ -11,32 +12,8 @@ interface CompanyRegister {
 
 const CompanyRegister: FC<CompanyRegister> = () => {
 
-    const companies: ICompany[] = [
-        {
-            id: 1,
-            name: "Актобе Монтаж Автоматика",
-            industries: "Строительная компания",
-            city: "Нур-Султан",
-            description: "Инженерные работы, в том числе электромонтажные и вентиляционные",
-            location: "Астана, ул. Бухар Жырау 30 н.п.6"
-        },
-        {
-            id: 2,
-            name: "Актобе Монтаж Автоматика",
-            industries: "Строительная компания",
-            city: "Нур-Султан",
-            description: "Инженерные работы, в том числе электромонтажные и вентиляционные",
-            location: "Астана, ул. Бухар Жырау 30 н.п.6"
-        },
-        {
-            id: 3,
-            name: "Актобе Монтаж Автоматика",
-            industries: "Строительная компания",
-            city: "Нур-Султан",
-            description: "Инженерные работы, в том числе электромонтажные и вентиляционные",
-            location: "Астана, ул. Бухар Жырау 30 н.п.6"
-        },
-    ];
+    const { companies } = useTypedSelector(state => state.company);
+    console.log(companies)
     return (
         <section className={"company-register"}>
             <h1 className={"company-register__title"}>
@@ -47,7 +24,7 @@ const CompanyRegister: FC<CompanyRegister> = () => {
                 Находите компании, оценивайте благонадежность и приглашайте в тендер.
             </p>
             <CompanyFilters companies={companies}/>
-            <Divider color={"#B9BDC3"} stretch={25}/>
+            <Divider color={"#B9BDC3"} />
             <CompanyResult companies={companies}/>
         </section>
     );

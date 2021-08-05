@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, MouseEvent} from "react";
 import "../../assets/styles/navbar/navbar.scss";
 import Icon from "../Icon/Icon";
 import basketSvg from "../../assets/images/svg/basket.svg";
@@ -8,13 +8,18 @@ import addSvg from "../../assets/images/svg/add.svg";
 import Button from "../Button/Button";
 import { useHistory } from "react-router-dom";
 import {BASKET_ROUTE, COMPANY_REGISTER_ROUTE} from "../../utils/consts";
+import Burger from "../Burger/Burger";
 
 interface NavbarProps {
-
+    sidebarOpenHandler: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
-const Navbar: FC<NavbarProps> = () => {
-    const history = useHistory<{}>();
+const Navbar: FC<NavbarProps> = (props) => {
+    const {
+        sidebarOpenHandler
+    } = props;
+
+    const history = useHistory();
 
     return (
         <nav className={"navbar"}>
@@ -65,6 +70,10 @@ const Navbar: FC<NavbarProps> = () => {
                     />
                 </Button>
             </div>
+            <Burger
+                className={"navbar__burger"}
+                sidebarOpenHandler={sidebarOpenHandler}
+            />
         </nav>
     );
 };

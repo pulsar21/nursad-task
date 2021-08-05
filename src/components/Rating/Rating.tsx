@@ -7,11 +7,14 @@ interface RatingProps {
     rate?: number;
     count?: number;
     size?: number;
+    disabled?: boolean;
+    readonly?: boolean;
 };
 
 const Rating: FC<RatingProps> = (props) => {
     const {
-        size, count, rate
+        size, count, rate, disabled,
+        readonly
     } = props;
 
     const [rating, setRating] = useState<number>(rate ?? 0);
@@ -30,6 +33,8 @@ const Rating: FC<RatingProps> = (props) => {
                                 type={"radio"}
                                 name={"rating"}
                                 value={ratingValue}
+                                readOnly={readonly}
+                                disabled={disabled}
                                 onClick={() => setRating(ratingValue)}
                             />
                             <Star
